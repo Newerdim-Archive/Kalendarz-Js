@@ -1,12 +1,16 @@
 document.body.onload = CreateCalendar();
 
-function CreateCalendar()
+function CreateCalendar(year = 2020, className = "")
 {
-    let year = 2020;
-
-    document.getElementsByTagName('h1')[0].innerHTML += year; //Change Header Year
+    var title = document.getElementsByClassName('calendar-name')[0];
+    if(title != null)
+        title.innerHTML += year; //Change Header Year
 
     let main = document.getElementsByTagName('main')[0];
+    if(main == null)
+        main = document.body;
+
+    let containers = document.getElementsByClassName(className); 
 
     let date = new Date(year, 1, 1, 1, 1, 1, 1);
 
@@ -91,7 +95,10 @@ function CreateCalendar()
         table.appendChild(thead);
         table.appendChild(tbody);
 
-        main.appendChild(table)
+        if(containers != null && containers.length == 12)
+            containers[i].appendChild(table);
+        else
+            main.appendChild(table)
     }
 
 }
