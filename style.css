@@ -22,14 +22,38 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
-    max-width: calc(4 * 300px);
+    max-width: calc(4 * 350px);
 }
 
 table {
-    background-color: white;
+    color: #ddd;
     display: block;
     padding: 20px;
     margin: 20px;
+    box-shadow: 4px 4px 10px #000,
+                -4px -4px 10px #666;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+}
+
+table::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    border-radius: 50%;
+    background: #222;
+    width: 200%;
+    height: 200%;
+    transform: scale(1);
+    transition: .5s;
+    z-index: 50;
+}
+
+table:hover::before {
+    transform: scale(0);
 }
 
 table caption {
@@ -39,15 +63,41 @@ table caption {
 }
 
 td {
-    width: 27px;
-    height: 27px;
+    width: 34px;
+    height: 34px;
     text-align: center;
+    cursor: default;
+}
+
+td:hover {
+    opacity: 1;
+}
+
+tbody td:hover {
+    text-shadow: 0 0 5px #DDD,
+                0 0 10px #DDD;
+    border-radius: 50%;
+}
+
+tbody td.warning:hover,
+tbody td.muted.warning:hover {
+    text-shadow: 0 0 5px #ff0000,
+                0 0 10px #ff0000;
+}
+
+tbody td.muted:hover {
+    text-shadow: 0 0 5px #AAA,
+                0 0 10px #AAA;
 }
 
 .muted {
-    opacity: 0.4;
+    color: #AAA;
 }
 
 .warning {
-    color: red;
+    color: #ff0000;
+}
+
+.muted.warning {
+    color: #d10000;
 }

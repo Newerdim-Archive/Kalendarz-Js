@@ -11,7 +11,7 @@ function CreateCalendar()
     let date = new Date(year, 1, 1, 1, 1, 1, 1);
 
     let dayName = ['Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz'];
-    let monthName = ['Styczeń', 'Luty', 'Marzec', 'Kwieciń', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+    let monthName = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
 
     for(let i = 0; i < 12; i++)
     {
