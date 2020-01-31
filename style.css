@@ -30,8 +30,8 @@ table {
     display: block;
     padding: 20px;
     margin: 20px;
-    box-shadow: 4px 4px 10px #000,
-                -4px -4px 10px #666;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5),
+                -2px -2px 8px rgba(255, 255, 255, 0.3);
     overflow: hidden;
     position: relative;
     z-index: 100;
@@ -41,19 +41,45 @@ table::before {
     content: '';
     display: block;
     position: absolute;
-    top: -50%;
-    left: -50%;
-    border-radius: 50%;
+    top: 0;
+    left: 0;
     background: #222;
-    width: 200%;
-    height: 200%;
+    width: 100%;
+    height: 100%;
     transform: scale(1);
     transition: .5s;
     z-index: 50;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 table:hover::before {
     transform: scale(0);
+}
+
+.month_0::before,
+.month_1::before,
+.month_2::before{
+    background-image: url('Sroga-zima-ostro-nas-zmrozi.-Koniec-ciepelka-juz-w-tym-tygodniu_article.png');
+}
+
+.month_3::before,
+.month_4::before,
+.month_5::before{
+    background-image: url('wiosna-1050x700.jpg');
+}
+
+.month_6::before,
+.month_7::before,
+.month_8::before{
+    background-image: url('maxresdefault.jpg');
+}
+
+.month_9::before,
+.month_10::before,
+.month_11::before{
+    background-image: url('5d807c46eebf7_o_medium.jpg');
 }
 
 table caption {

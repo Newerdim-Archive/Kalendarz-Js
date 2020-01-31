@@ -22,6 +22,7 @@ function CreateCalendar(year = 2020, className = "")
         date = new Date(year, i, 1, 1, 1, 1, 1); //Restart Month
 
         let table = document.createElement('table');
+        table.classList.add('month_' + i);
         let thead = document.createElement('thead');
         let tbody = document.createElement('tbody');
 
